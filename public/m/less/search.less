@@ -1,0 +1,36 @@
+@import "base.less";
+ body{
+     background-color: #fff;
+}
+ // 中间主体部分 
+ #main{
+     .search-history{
+         padding: 0.1rem;
+         .title{
+             font-size: 0.14rem;
+        }
+         .content{
+             ul{
+                 border: 1px solid @borderColor;
+                 border-radius: 0.05rem;
+                 li{
+                     position: relative;
+                     >a{
+                         height: 0.4rem;
+                         line-height: 0.4rem;
+                         padding-left: 0.1rem;
+                    }
+                     >.btn-delete{
+                         position: absolute;
+                         right: 0.1rem;
+                         top:0.12rem 
+                    }
+                     &+li{
+                         border-top: 0.01rem solid @borderColor;
+                    }
+                }
+            }
+        }
+    }
+}
+ 

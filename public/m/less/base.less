@@ -1,0 +1,277 @@
+@aColor:#333;
+ @borderColor:#ccc;
+ @mainColor:#006699;
+ html{
+     font-size: 100px;
+     height: 100%;
+}
+ body{
+     font-size: 0.16rem;
+     height: 100%;
+     padding: 0.45rem 0;
+}
+ *{
+     margin: 0;
+     padding: 0;
+    /*在移动端设置盒模型border-box 为了防止元素加边框或者padding出现水平滚动条*/
+     box-sizing: border-box;
+    /* 去除移动端按住元素的时候会出现高亮背景色 */
+     -webkit-tap-highlight-color: transparent;
+    /* 去掉所有移动端内边框 */
+     outline: none;
+}
+ a {
+     color: @aColor;
+     text-decoration: none;
+}
+ li {
+     list-style: none;
+}
+ input {
+     border: 0;
+}
+ img {
+    /* 解决图片底部0.03rem的间隙 为了让图片的对齐方式和文本一致*/
+     vertical-align: middle;
+}
+ i {
+     font-style: normal;
+}
+ #header{
+     background-color: @mainColor;
+     position: fixed;
+     top: 0rem;
+     width: 100%;
+     display: flex;
+     z-index: 999;
+     display: flex;
+     h4{
+         flex: 1;
+         text-align: center;
+         margin: 0;
+         line-height: 0.45rem;
+         color: #fff;
+         font-weight: normal;
+    }
+     form{
+         flex: 1;
+         height:0.45rem;
+         padding: 0.05rem 0;
+         input{
+             background-color: #fff;
+             color: #ccc;
+             text-align: left;
+             font-size: 0.12rem;
+        }
+    }
+     .fa{
+         width: 0.45rem;
+         height: 0.45rem;
+         display: block;
+         text-align: center;
+         line-height: 0.45rem;
+         color: #fff;
+    }
+     .fa-arrow-left{
+         margin-left: 0rem;
+    }
+     .fa-search{
+         margin-right: 0rem;
+    }
+}
+ // 底部公共样式 
+ #footer{
+     // height: 0.45rem;
+     background-color: @mainColor;
+     position: fixed;
+     bottom: 0rem;
+     width: 100%;
+     z-index: 999;
+     >.mui-row{
+         a{
+             &.active{
+                 color: orange;
+            }
+             display: block;
+             color: #fff;
+             text-align: center;
+             padding: 0.04rem 0;
+             height: 0.45rem;
+             >i.fa{
+                 display: block;
+                 font-size: 0.16rem;
+            }
+             >span{
+                 font-size: 0.14rem;
+            }
+        }
+    }
+}
+ #main{
+     position: relative;
+     height: 100%;
+     overflow: hidden;
+     .search-form{
+         display: flex;
+         padding: 0.1rem;
+         >.input-search{
+             flex: 1;
+             height: 0.3rem;
+             background-color: #fff;
+             border: 1px solid @mainColor;
+             border-radius: 0.06rem 0 0 0.06rem;
+             text-align: left;
+             font-size: 0.12rem;
+             margin-bottom: 0rem;
+        }
+         >.btn-search{
+             width: 0.6rem;
+             height: 0.3rem;
+             background-color: @mainColor;
+             border: 1px solid @mainColor;
+             border-radius: 0 0.06rem 0.06rem 0;
+        }
+    }
+}
+ // 产品列表公共样式 
+ .productList-content {
+     padding: 0 0.05rem;
+     .mui-col-xs-6 {
+         &:nth-child(odd) {
+             .product {
+                 margin-right: 0.05rem;
+            }
+        }
+         &:nth-child(even) {
+             .product {
+                 margin-left: 0.05rem;
+            }
+        }
+         // 给a标签添加盒子阴影和下内边距
+          .product {
+             display: block;
+             text-align: center;
+             box-shadow: 0rem 0rem 0.02rem @borderColor;
+             padding-bottom: 0.1rem;
+             margin-top: 0.1rem;
+             .product-name{
+                 text-overflow: -o-ellipsis-lastline;
+                 overflow: hidden;
+                 text-overflow: ellipsis;
+                 display: -webkit-box;
+                 -webkit-line-clamp: 2;
+                 line-clamp: 2;
+                 -webkit-box-orient: vertical;
+            }
+             >.product-img {
+                 width: 100%;
+            }
+             >.product-name {
+                 font-size: 0.16rem;
+            }
+             >.price {
+                 >span {
+                     color: red;
+                }
+                 >del {
+                     color: #ccc;
+                }
+            }
+             button {
+                 background-color: #006699;
+                 border-color: #006699;
+            }
+        }
+    }
+}
+ // 公共加载动画样式 
+ #loading {
+     background-color: #ccc;
+     height: 100%;
+     width: 100%;
+     position: fixed;
+     z-index: 998;
+     margin-top: 0rem;
+     top: 0rem;
+}
+ #loading-center {
+     width: 100%;
+     height: 100%;
+     position: relative;
+}
+ #loading-center-absolute {
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     height: 2rem;
+     width: 2rem;
+     margin-top: -1rem;
+     margin-left: -1rem;
+}
+ .object {
+     -moz-border-radius: 50% 50% 50% 50%;
+     -webkit-border-radius: 50% 50% 50% 50%;
+     border-radius: 50% 50% 50% 50%;
+     position: absolute;
+     border-left: 0.05rem solid #FFF;
+     border-right: 0.05rem solid #FFF;
+     border-top: 0.05rem solid transparent;
+     border-bottom: 0.05rem solid transparent;
+     -webkit-animation: animate 2s infinite;
+     animation: animate 2s infinite;
+}
+ #object_one {
+     left: 0.75rem;
+     top: 0.75rem;
+     width: 0.5rem;
+     height: 0.5rem;
+}
+ #object_two {
+     left: 0.65rem;
+     top: 0.65rem;
+     width: 0.7rem;
+     height: 0.7rem;
+     -webkit-animation-delay: 0.1s;
+     animation-delay: 0.1s;
+}
+ #object_three {
+     left: 0.55rem;
+     top: 0.55rem;
+     width: 0.9rem;
+     height: 0.9rem;
+     -webkit-animation-delay: 0.2s;
+     animation-delay: 0.2s;
+}
+ #object_four {
+     left: 0.45rem;
+     top: 0.45rem;
+     width: 1.1rem;
+     height: 1.1rem;
+     -webkit-animation-delay: 0.3s;
+     animation-delay: 0.3s;
+}
+ @-webkit-keyframes animate {
+     50% {
+         -ms-transform: rotate(180deg);
+         -webkit-transform: rotate(180deg);
+         transform: rotate(180deg);
+    }
+     100% {
+         -ms-transform: rotate(0deg);
+         -webkit-transform: rotate(0deg);
+         transform: rotate(0deg);
+    }
+}
+ @keyframes animate {
+     50% {
+         -ms-transform: rotate(180deg);
+         -webkit-transform: rotate(180deg);
+         transform: rotate(180deg);
+    }
+     100% {
+         -ms-transform: rotate(0deg);
+         -webkit-transform: rotate(0deg);
+         transform: rotate(0deg);
+    }
+}
+ 

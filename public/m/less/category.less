@@ -1,0 +1,49 @@
+@import "base.less";
+ // 中间主体部分
+  #main{
+     display: flex;
+     .category-left{
+         width: 0.8rem;
+         ul{
+             background-color: #fff;
+             li{
+                 &.active{
+                     background-color: #efeff4;
+                     a{
+                         color: @mainColor;
+                    }
+                }
+                 a{
+                     display: block;
+                     height: 0.45rem;
+                     text-align: center;
+                     line-height: 0.45rem;
+                     color: #666;
+                     font-size: 0.14rem;
+                }
+                 &+li{
+                     border-top: 0.01rem solid @borderColor;
+                }
+            }
+        }
+    }
+     .category-right{
+        /* 实现局部滑动效果的前提： 父盒子高度 等于 去除顶部与底部高度，要写死 子盒子高度要 大于 父盒子高度 注意: MUI中 滑动大盒子进行绝对定位，要改变它参照的父元素的定位，否则有内容显示不完全 使用MUI步骤： 1.引入MUI的html结构代码 2.复制初始化代码 3.设置css样式：设置高度，定位父级 */
+         position: relative;
+         flex: 1;
+         // padding: 0.1rem;
+         .mui-scroll{
+             height: 101%;
+             padding: 0.1rem;
+        }
+         a{
+             background-color: #fff;
+             display: block;
+             text-align: center;
+             img{
+                 width: 100%;
+            }
+        }
+    }
+}
+ 

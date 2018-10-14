@@ -1,0 +1,79 @@
+@import "base.less";
+ body{
+     padding-bottom: 0.8rem;
+}
+ #order{
+     display: flex;
+     justify-content: space-between;
+     height: 0.34rem;
+     line-height: 0.34rem;
+     font-size: 0.14rem;
+     border-top: 0.01rem solid @borderColor;
+     .left{
+         padding-left: 0.2rem;
+         color: red;
+         font-weight: 600;
+    }
+}
+ #main{
+     .mui-navigate-right{
+         display: flex;
+         padding: 0.1rem;
+         white-space:normal;
+         .left{
+             text-align: center;
+             img{
+                 width: 0.6rem;
+                 height: 0.6rem;
+                 display: block;
+            }
+        }
+         .right{
+             flex: 1;
+             font-size: 0.14rem;
+             >.product-name{
+                 color: #666;
+            }
+             >.product-price{
+                 .now-price{
+                     color: red;
+                }
+                 .old-price{
+                     color: #ccc;
+                     font-size: 0.12rem;
+                }
+            }
+             >.product-argument{
+                 display: flex;
+                 justify-content: space-between;
+            }
+        }
+    }
+}
+ .mui-popup-inner{
+     padding: 0.1rem;
+     .product-size{
+         display: flex;
+         text-align: left;
+         .left{
+             width: 0.5rem;
+        }
+         .right{
+             flex: 1;
+             span{
+                 display: inline-block;
+                 width: 0.3rem;
+                 height: 0.3rem;
+                 border: 1px solid @borderColor;
+                 text-align: center;
+                 line-height: 0.3rem;
+                 margin-right: 0.05rem;
+                 margin-bottom: 0.05rem;
+                 &.active{
+                     background-color: @mainColor;
+                }
+            }
+        }
+    }
+}
+ 
